@@ -62,13 +62,9 @@ class GraphPage extends React.Component {
                 <Grid item xs={12}>
                    
             <Card>
-            <CardHeader title="Graph Box">  </CardHeader>
-            <CardContent>
-           {/* {!isEmpty(csvData) && <Graph csvData={csvData} />} */}
-           <Graph csvData={csvData} />
-            </CardContent>
-            <CardActions>
-            <Button 
+            <CardHeader title="NIFTY50 Draw Down Chart">  </CardHeader>
+   <CardActions style={{float:"right"}}>
+            <Button
             color="primary"
             variant="contained"
             startIcon={ <BackupOutlinedIcon />}
@@ -76,13 +72,18 @@ class GraphPage extends React.Component {
           {isLoading ?  <CircularProgress color="white" /> : 'Upload File'}
           <input style={{ display: 'none' }} type="file" id='file' name="file"onChange= {this.onUploadFile}/>
         </Button>
-        <Button color="primary" 
+        <Button color="primary"
         variant="contained"
         onClick={() => this.getAllData()}
         >
           Get All Data
         </Button>
             </CardActions>
+            <CardContent>
+           {/* {!isEmpty(csvData) && <Graph csvData={csvData} />} */}
+           <Graph csvData={csvData} />
+            </CardContent>
+           
             </Card>
             
                 </Grid>
