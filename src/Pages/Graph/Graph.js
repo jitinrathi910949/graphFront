@@ -1,6 +1,6 @@
 import * as React from "react";
 import {Paper} from '@material-ui/core';
-import Box from 'components/Box'
+import Box from '../../components/Box'
 import useChartConfig from './useChartConfig'
 import makeChartConfig from './makeChartConfig';
 // var Chart = require('chart.js');

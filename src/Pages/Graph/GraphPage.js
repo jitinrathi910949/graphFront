@@ -8,8 +8,8 @@ import BackupOutlinedIcon from '@material-ui/icons/BackupOutlined'
 import styles from './GraphStyle'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import {uploadCsv, fetchAllData} from 'store/actions/graphActions';
-import {isEmpty} from 'utils/common';
+import {uploadCsv, fetchAllData} from '../../store/actions/graphActions';
+import {isEmpty} from '../../utils/common';
 import Graph from './Graph';
 
 class GraphPage extends React.Component {
