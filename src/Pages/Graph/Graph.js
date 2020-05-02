@@ -1,6 +1,5 @@
 import * as React from "react";
-import {Paper} from '@material-ui/core';
-import Box from 'components/Box'
+import Box from '../../components/Box'
 import useChartConfig from './useChartConfig'
 import makeChartConfig from './makeChartConfig';
 // var Chart = require('chart.js');
@@ -12,11 +11,11 @@ export default function Graph(props) {
   // })
   const {csvData=[]} = props;
   const data= React.useMemo(
-    () => makeChartConfig(csvData)
+    () => makeChartConfig(csvData), [csvData]
   )
   const series = React.useMemo(
     () => ({
-      showPoints: false
+      showPoints: false,
     }),
     []
   )
@@ -25,7 +24,8 @@ export default function Graph(props) {
   // const data = makeChartConfig(csvData);
   const getSeriesStyle = React.useCallback(
     series => ({
-      strokeWidth: 1
+      strokeWidth: 1,
+      show: true
     }),
     []
   )
@@ -36,7 +36,12 @@ export default function Graph(props) {
         primary: true,
         position: 'bottom',
         type: 'linear',
-        show: true,
+        ticks: {
+          autoSkip: true,
+        maxTicksLimit: 20
+        },
+        // show: true,
+        min:0,
         format: d => {
           var a = d;
           a=a.replace(/\,/g,'');
@@ -46,17 +51,17 @@ export default function Graph(props) {
       },
       { position: 'left',
        type: 'linear',
-        show: true ,
+        // show: true ,
+        min:0,
         format: d => `${d}%`
       }
-    ],
-    [true, true]
+    ], [csvData]
    
   )
 
     return(
-        <>
-        <div>
+      
+       
         <Box>
         <Chart
          data={data} 
@@ -64,13 +69,14 @@ export default function Graph(props) {
           series={series}
           getSeriesStyle={getSeriesStyle}
           getLabel={getLabel} 
+          
            tooltip 
           //  primaryCursor
           //  secondaryCursor
            />
         </Box>
-        </div>
+        
   
-        </>
+        
     );
 }

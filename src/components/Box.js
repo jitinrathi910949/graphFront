@@ -4,15 +4,15 @@ import './BoxStyle.css';
 export default function Box ({
   children,
   width = 500,
-  height = 300,
+  height = 500,
   resizable = true,
   style = {},
   className,
 }) {
   return (
-    <div>
+    <div style={{marginTop: '25px'}}>
       {resizable ? (
-        <ResizableBox width={width} height={height}>
+        <ResizableBox width={'100%'} height={height}>
           <div
             style={{
               ...style,
@@ -27,7 +27,7 @@ export default function Box ({
       ) : (
         <div
           style={{
-            width: `${width}px`,
+            width: `100%`,
             height: `${height}px`,
             ...style,
           }}

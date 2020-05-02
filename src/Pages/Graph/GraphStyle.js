@@ -10,5 +10,8 @@ const GraphStyle = theme => ({
         width: '100%',
         color: theme.palette.text.secondary,
       },
+      toolTipStyle: {
+        backgroundColor: 'rgba(247, 247, 247, 0.5)',
+      }
 })
 export default GraphStyle;

@@ -8,9 +8,10 @@ import BackupOutlinedIcon from '@material-ui/icons/BackupOutlined'
 import styles from './GraphStyle'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import {uploadCsv, fetchAllData} from 'store/actions/graphActions';
-import {isEmpty} from 'utils/common';
+import {uploadCsv, fetchAllData} from '../../store/actions/graphActions';
+import {isEmpty} from '../../utils/common';
 import Graph from './Graph';
+import GraphRecharts from './GraphRechart';
 
 class GraphPage extends React.Component {
     constructor(props){
@@ -62,12 +63,8 @@ class GraphPage extends React.Component {
                 <Grid item xs={12}>
                    
             <Card>
-            <CardHeader title="Graph Box">  </CardHeader>
-            <CardContent>
-           {/* {!isEmpty(csvData) && <Graph csvData={csvData} />} */}
-           <Graph csvData={csvData} />
-            </CardContent>
-            <CardActions>
+            <CardHeader title="NIFTY50 Draw Down Chart">  </CardHeader>
+            <CardActions style={{float:'right'}}>
             <Button 
             color="primary"
             variant="contained"
@@ -83,6 +80,12 @@ class GraphPage extends React.Component {
           Get All Data
         </Button>
             </CardActions>
+            <CardContent style={{marginTop: '25px'}}>
+           {/* {!isEmpty(csvData) && <Graph csvData={csvData} />} */}
+           {/* <Graph csvData={csvData} /> */}
+           <GraphRecharts csvData={csvData} classes={classes} />
+            </CardContent>
+    
             </Card>
             
                 </Grid>
