@@ -26,7 +26,7 @@ export default function GraphRecharts(props) {
             <LineChart width={600} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
                 <Line type="monotone" dataKey="y" stroke="#8884d8" dot={false} />
                 <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-                <XAxis dataKey="x" minTickGap={30} orientation="top" tickFormatter={(label) => {
+                <XAxis dataKey="x" minTickGap={50} orientation="top" tickFormatter={(label) => {
 
                     const tempDate = new Date(parseInt(label, 10));
                     console.log('temp date is', tempDate);
