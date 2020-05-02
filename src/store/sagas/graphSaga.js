@@ -1,8 +1,8 @@
 import { call, put, takeLatest, all, fork } from 'redux-saga/effects'
 import * as actions from '../actions/types'
 import urls from '../../utils/urls';
-import { createUrl, isEmpty } from 'utils/common'
-import axios from 'utils/axios'
+import { createUrl, isEmpty } from '../../utils/common'
+import axios from '../../utils/axios'
 
 //##############Upload Csv ####################################
 
