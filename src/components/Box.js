@@ -12,7 +12,7 @@ export default function Box ({
   return (
     <div style={{marginTop: '25px'}}>
       {resizable ? (
-        <ResizableBox width={'100%'} height={height}>
+        <ResizableBox width={"90%"} height={height}>
           <div
             style={{
               ...style,
@@ -27,7 +27,7 @@ export default function Box ({
       ) : (
         <div
           style={{
-            width: `100%`,
+            width: `90%`,
             height: `${height}px`,
             ...style,
           }}

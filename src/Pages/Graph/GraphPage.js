@@ -73,7 +73,7 @@ class GraphPage extends React.Component {
           {isLoading ?  <CircularProgress color="white" /> : 'Upload File'}
           <input style={{ display: 'none' }} type="file" id='file' name="file"onChange= {this.onUploadFile}/>
         </Button>
-        <Button color="primary" 
+        <Button color="primary"
         variant="contained"
         onClick={() => this.getAllData()}
         >
